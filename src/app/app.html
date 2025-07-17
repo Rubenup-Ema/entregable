@@ -1,7 +1,95 @@
-<div class="container">
-  <app-toolbar class="toolbar"></app-toolbar>
-  <app-navbar class="navbar"></app-navbar>
-  <div class="content">
-    Contenido principal
+<div class="container-fluid">
+
+  <div class="row mb-2">
+
+    <div class="col-12">
+
+      <app-toolbar class="toolbar"></app-toolbar>
+
+    </div>
+
+    <hr>
+
   </div>
+
+  
+  <div class="row mb-2">
+
+    <h3>El NavBar</h3>
+
+    <div class="col-12">
+      
+      <app-navbar class="navbar"></app-navbar>
+    
+    </div>
+
+    <hr>
+    
+  </div>
+
+
+
+  <div class="row mb-2">
+
+    <div class="content">
+      Contenido principal
+    </div>
+
+    <hr>
+    
+  </div>
+
+  
+
+  <div class="row mb-2">
+
+    <h3>El Material Table</h3>
+
+
+    <div class="col-sm-7">
+
+      <app-students-table [students]="students" (studentDelete)="deleteStudent($event)" (studentEdit)="editStudent($event)">
+      
+      </app-students-table>
+    
+     
+
+    </div>
+
+    <div class="col-sm-5">
+
+       <app-add-form *ngIf="studentNew" (studentAdded)="addStudents($event)">
+      </app-add-form>
+
+      <app-edit-form *ngIf="!studentNew" [studentEdit]="studentEdit"  (noneStudent)="showEdit($event)" (studentEdited)="studentEdited($event)">
+      </app-edit-form>
+      
+
+    </div>
+
+    <hr>
+
+  </div>
+
+
+
+  <div class="row mb-2">
+
+    <h3>El Json</h3>
+
+
+    <div class="col-12">
+
+      {{students | json}}
+
+      {{studentEdit | json}}
+
+    </div>
+
+    <hr>
+    
+  </div>
+
+
+
 </div>

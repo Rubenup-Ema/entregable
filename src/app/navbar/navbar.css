@@ -1,0 +1,14 @@
+ul.centrado {
+
+    list-style: none;
+    padding: 0;
+    width: max-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+li:hover {
+
+    cursor: pointer;
+
+}

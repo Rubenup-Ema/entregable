@@ -1,0 +1,97 @@
+<div class="container bg-light">
+  <h2>Modificar Estudiante</h2>
+
+  <form class="mb-3" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Campo DNI -->
+    <div class="form-group">
+      <label for="dni">DNI:</label>
+      <input 
+        type="text" 
+        class="form-control"
+        id="dni" 
+        readonly
+        formControlName="dni" 
+        placeholder="Ingrese DNI">
+      <div *ngIf="studentForm.get('dni')?.invalid && studentForm.get('dni')?.touched">
+        DNI es requerido
+      </div>
+    </div>
+
+    <!-- Campo Nombre -->
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input 
+        type="text" 
+        class="form-control"
+        id="name" 
+        formControlName="name" 
+        placeholder="Ingrese nombre">
+      <div *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.touched">
+        Nombre es requerido
+      </div>
+    </div>
+
+    <!-- Campo Apellido -->
+    <div class="form-group">
+      <label for="surname">Apellido:</label>
+      <input 
+        type="text" 
+        class="form-control"
+        id="surname" 
+        formControlName="surname" 
+        placeholder="Ingrese apellido">
+      <div *ngIf="studentForm.get('surname')?.invalid && studentForm.get('surname')?.touched">
+        Apellido es requerido
+      </div>
+    </div>
+
+ <!-- Campo Promedio -->
+    <div class="form-group">
+      <label for="age">Edad:</label>
+      <input 
+        type="number" 
+        class="form-control"
+        id="age" 
+        formControlName="age" 
+        placeholder="Ingrese la edad">
+         <div *ngIf="studentForm.get('age')?.invalid && studentForm.get('age')?.touched">
+        Edad requerida >= 0
+      </div>
+    </div>
+
+
+    <!-- Campo Promedio -->
+    <div class="form-group">
+      <label for="average">Average:</label>
+      <input 
+        type="number" 
+        class="form-control"
+        id="average" 
+        formControlName="average" 
+        placeholder="Ingrese promedio">
+         <div *ngIf="studentForm.get('average')?.invalid && studentForm.get('average')?.touched">
+        Promedio requerido [0,100]
+      </div>
+    </div>
+
+   
+
+  </form>
+
+   <div class="row text-center mb-3">
+
+        <div class="col text-center">
+            <button type="submit" (click)="onSubmit()" class="btn btn-success" [disabled]="studentForm.invalid">Modificar Estudiante</button>
+            
+        </div>
+
+        <div class="col text-center">
+            
+            <button type="button" (click)="onReset()" class="btn btn-danger" >Salir Formulario</button>
+
+        </div>
+    
+
+    </div>
+</div>
