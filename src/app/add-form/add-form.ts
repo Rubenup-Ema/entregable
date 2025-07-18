@@ -23,11 +23,11 @@ export class AddForm implements OnInit {
 
     this.studentForm = this.fb.group({
 
-      dni: ['', Validators.required],
+      dni: ['', [Validators.required, Validators.minLength(5)]],
       name: ['', Validators.required],
       surname: ['', Validators.required],
-      age: ['', Validators.required, Validators.min(0)],
-      average: ['', Validators.required, Validators.min(0), Validators.max(100)]
+      age: ['', [Validators.required, Validators.min(0)]],
+      average: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
 
     })
     

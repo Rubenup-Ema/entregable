@@ -97,11 +97,13 @@ export class App implements OnInit {
     
     this.studentEdit = {name:'',surname:'', age:0, dni:0,average:0};
     
-    this.studentEdit.name = student.name;
-    this.studentEdit.surname = student.surname;
-    this.studentEdit.age = student.age;
-    this.studentEdit.dni= student.dni;
-    this.studentEdit.average = student.average;
+    // this.studentEdit.name = student.name;
+    // this.studentEdit.surname = student.surname;
+    // this.studentEdit.age = student.age;
+    // this.studentEdit.dni= student.dni;
+    // this.studentEdit.average = student.average;
+
+    this.studentEdit = student
    
     console.log('Send edit', this.studentEdit);
     
