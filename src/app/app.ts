@@ -81,6 +81,7 @@ export class App implements OnInit {
      this.students = [...this.students];
     this.messageBox('Registro editado');
   // this.students[index] = {
+
   //   ...this.students[index], 
   //   name: studentE.name,
   //   surname: studentE.surname,
@@ -115,9 +116,10 @@ export class App implements OnInit {
   messageBox(texto: string) {
 
     this.snackBar.open(texto + ' ✅', 'Cerrar', {
-  duration: 3000, // ms
-  verticalPosition: 'top',  // 'top' | 'bottom'
-  horizontalPosition: 'right' // 'start' | 'center' | 'end' | 'left' | 'right'
+    duration: 3000, // ms
+    verticalPosition: 'top',  // 'top' | 'bottom'
+    horizontalPosition: 'right' // 'start' | 'center' | 'end' | 'left' | 'right'
+    
 });
 
   }
